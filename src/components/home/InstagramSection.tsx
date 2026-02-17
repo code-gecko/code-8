@@ -1,26 +1,14 @@
 import { Instagram } from "lucide-react";
+import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
+import hotPepperSeedlings from "@/assets/farm/hot-pepper-seedlings.jpg";
+import pepperPlants from "@/assets/farm/pepper-plants.jpg";
+import farmerWorking from "@/assets/farm/farmer-working.jpg";
 
 const instagramPosts = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Goats at the farm",
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Fresh green beans harvest",
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Chickens at the farm",
-  },
-  {
-    id: 4,
-    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Farmer working in the field",
-  },
+  { id: 1, image: greenhouseSeedlings, alt: "Greenhouse seedlings" },
+  { id: 2, image: hotPepperSeedlings, alt: "Hot pepper seedlings" },
+  { id: 3, image: pepperPlants, alt: "Pepper plants growing" },
+  { id: 4, image: farmerWorking, alt: "Farmer working in the field" },
 ];
 
 export function InstagramSection() {

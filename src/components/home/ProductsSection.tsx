@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart } from "lucide-react";
+import chiliHarvest from "@/assets/farm/chili-harvest.jpg";
+import sweetPepper from "@/assets/farm/sweet-pepper.jpg";
 
 const products = [
   {
@@ -11,7 +13,7 @@ const products = [
     description: "Locally grown, premium quality chili peppers",
     price: "UGX 15,000",
     unit: "per kg",
-    image: "https://images.unsplash.com/photo-1583119022894-919a68a3d0e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: chiliHarvest,
     badge: "Fresh",
     category: "vegetables",
   },
@@ -41,7 +43,7 @@ const products = [
     description: "Colorful bell peppers from our greenhouse",
     price: "UGX 20,000",
     unit: "per kg",
-    image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: sweetPepper,
     badge: "Fresh",
     category: "vegetables",
   },
