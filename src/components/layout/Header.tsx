@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ShoppingCart, Leaf } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -22,18 +23,8 @@ export function Header() {
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex items-center">
-              <Leaf className="h-8 w-8 text-primary" />
-              <div className="ml-2">
-                <span className="font-display text-2xl font-bold text-primary">
-                  Flycorp
-                </span>
-                <span className="block text-xs font-semibold text-secondary uppercase tracking-widest -mt-1">
-                  Farms
-                </span>
-              </div>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="Flycorp Farms" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

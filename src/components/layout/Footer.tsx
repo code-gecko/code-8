@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Mail, MapPin, Phone, Leaf } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const footerLinks = {
   quickLinks: [
@@ -26,13 +27,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <Leaf className="h-8 w-8" />
-              <div>
-                <span className="font-display text-2xl font-bold">Flycorp</span>
-                <span className="block text-xs font-semibold uppercase tracking-widest opacity-80">
-                  Farms
-                </span>
-              </div>
+              <img src={logo} alt="Flycorp Farms" className="h-12 w-auto" />
             </Link>
             <p className="text-sm opacity-80 leading-relaxed">
               Sustainable food production, climate-smart innovations, and value addition. 
