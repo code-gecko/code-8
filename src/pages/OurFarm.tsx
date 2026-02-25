@@ -2,26 +2,30 @@ import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Sprout, Microscope, Handshake, Award } from "lucide-react";
+import farmerWorking from "@/assets/farm/farmer-working.jpg";
+import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
+import pepperPlants from "@/assets/farm/pepper-plants.jpg";
+import farmField from "@/assets/farm/farm-field.jpg";
 
 const values = [
   {
-    icon: "🌱",
+    icon: Sprout,
     title: "Sustainability",
     description: "We practice circular farming that minimizes waste and regenerates our land for future generations.",
   },
   {
-    icon: "🔬",
+    icon: Microscope,
     title: "Innovation",
     description: "We embrace climate-smart technologies and continuously experiment with new farming methods.",
   },
   {
-    icon: "🤝",
+    icon: Handshake,
     title: "Community",
     description: "We believe in sharing knowledge and building partnerships to strengthen local food systems.",
   },
   {
-    icon: "✨",
+    icon: Award,
     title: "Quality",
     description: "We maintain the highest standards in everything we grow, process, and deliver to our customers.",
   },
@@ -67,9 +71,7 @@ const OurFarm = () => {
       <section className="relative min-h-[60vh] flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1500076656116-558758c991c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
-          }}
+          style={{ backgroundImage: `url(${farmField})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
         </div>
@@ -126,13 +128,13 @@ const OurFarm = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src={greenhouseSeedlings}
                 alt="Greenhouse farming"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Fresh vegetables"
+                src={pepperPlants}
+                alt="Pepper plants growing"
                 className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8"
               />
             </div>
@@ -155,7 +157,9 @@ const OurFarm = () => {
             {values.map((value) => (
               <Card key={value.title} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-8 pb-6">
-                  <span className="text-5xl mb-4 block">{value.icon}</span>
+                  <div className="mx-auto w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <value.icon className="h-7 w-7 text-primary" />
+                  </div>
                   <h3 className="font-display text-xl font-semibold mb-3">{value.title}</h3>
                   <p className="text-muted-foreground text-sm">{value.description}</p>
                 </CardContent>

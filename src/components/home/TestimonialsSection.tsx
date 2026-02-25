@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, User } from "lucide-react";
 
 const testimonials = [
   {
@@ -9,21 +9,18 @@ const testimonials = [
     quote: "Working with Flycorp Farms has transformed how we approach agriculture. Their innovative methods and sustainable practices have helped us increase yields while reducing costs. The team is knowledgeable, passionate, and always willing to share their expertise.",
     author: "Sarah Nakato",
     role: "Kampala Farmer",
-    avatar: "👩🏾‍🌾",
   },
   {
     id: 2,
     quote: "The training I received from Flycorp Farms on hydroponics has completely changed my farming business. I now grow vegetables year-round and have doubled my income. Their support team is always available when I need help.",
     author: "John Ochieng",
     role: "Greenhouse Farmer",
-    avatar: "👨🏾‍🌾",
   },
   {
     id: 3,
     quote: "The quality of produce from Flycorp Farms is exceptional. As a restaurant owner, I appreciate their consistency and reliability. Their delivery is always on time, and the vegetables are always fresh.",
     author: "Grace Auma",
     role: "Restaurant Owner",
-    avatar: "👩🏾‍🍳",
   },
 ];
 
@@ -43,15 +40,15 @@ export function TestimonialsSection() {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-12">
-          <span className="text-4xl mb-4 block">🐔</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary">
+          <span className="text-secondary font-semibold uppercase tracking-wider text-sm">
+            Testimonials
+          </span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mt-2">
             What Our Clients Say
           </h2>
         </div>
 
-        {/* Testimonial Card */}
         <div className="max-w-4xl mx-auto">
           <Card className="border-none shadow-lg bg-card">
             <CardContent className="p-8 md:p-12">
@@ -62,7 +59,9 @@ export function TestimonialsSection() {
               </blockquote>
 
               <div className="flex items-center gap-4">
-                <span className="text-4xl">{current.avatar}</span>
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <User className="h-6 w-6 text-primary" />
+                </div>
                 <div>
                   <p className="font-semibold text-foreground">{current.author}</p>
                   <p className="text-sm text-muted-foreground">{current.role}</p>
@@ -71,7 +70,6 @@ export function TestimonialsSection() {
             </CardContent>
           </Card>
 
-          {/* Navigation */}
           <div className="flex items-center justify-center gap-4 mt-8">
             <Button
               variant="outline"

@@ -2,10 +2,18 @@ import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ShoppingCart, Filter, Search } from "lucide-react";
+import { ShoppingCart, Filter, Search, Leaf } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
+import chiliHarvest from "@/assets/farm/chili-harvest.jpg";
+import sweetPepper from "@/assets/farm/sweet-pepper.jpg";
+import hotPepperSeedlings from "@/assets/farm/hot-pepper-seedlings.jpg";
+import farmerWorking from "@/assets/farm/farmer-working.jpg";
+import greenhousePots from "@/assets/farm/greenhouse-pots.jpg";
+import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
+import pepperPlants from "@/assets/farm/pepper-plants.jpg";
+import farmField from "@/assets/farm/farm-field.jpg";
 
 const categories = ["All", "Vegetables", "Processed", "Poultry", "Fish", "Meat"];
 
@@ -16,7 +24,7 @@ const products = [
     description: "Locally grown, premium quality chili peppers",
     price: "UGX 15,000",
     unit: "per kg",
-    image: "https://images.unsplash.com/photo-1583119022894-919a68a3d0e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: chiliHarvest,
     badge: "Fresh",
     category: "vegetables",
   },
@@ -26,7 +34,7 @@ const products = [
     description: "Sun-dried and processed chili flakes",
     price: "UGX 25,000",
     unit: "per 500g",
-    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: hotPepperSeedlings,
     badge: "Processed",
     category: "processed",
   },
@@ -36,7 +44,7 @@ const products = [
     description: "Free-range eggs from our healthy chickens",
     price: "UGX 12,000",
     unit: "per tray",
-    image: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: farmerWorking,
     badge: "Organic",
     category: "poultry",
   },
@@ -46,7 +54,7 @@ const products = [
     description: "Colorful bell peppers from our greenhouse",
     price: "UGX 20,000",
     unit: "per kg",
-    image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: sweetPepper,
     badge: "Fresh",
     category: "vegetables",
   },
@@ -56,7 +64,7 @@ const products = [
     description: "Fresh tilapia from our aquaculture ponds",
     price: "UGX 18,000",
     unit: "per kg",
-    image: "https://images.unsplash.com/photo-1544943910-4c1dc44aab44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: greenhouseSeedlings,
     badge: "Fresh",
     category: "fish",
   },
@@ -66,7 +74,7 @@ const products = [
     description: "Premium quality goat meat, grass-fed",
     price: "UGX 35,000",
     unit: "per kg",
-    image: "https://images.unsplash.com/photo-1603048297172-c92544798d5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: farmField,
     badge: "Premium",
     category: "meat",
   },
@@ -76,7 +84,7 @@ const products = [
     description: "Fresh whole chicken, locally raised",
     price: "UGX 28,000",
     unit: "per bird",
-    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: greenhousePots,
     badge: "Fresh",
     category: "poultry",
   },
@@ -86,7 +94,7 @@ const products = [
     description: "Fine ground chili powder, rich flavor",
     price: "UGX 18,000",
     unit: "per 250g",
-    image: "https://images.unsplash.com/photo-1599909533379-1b8c266ab676?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: pepperPlants,
     badge: "Processed",
     category: "processed",
   },
@@ -95,6 +103,7 @@ const products = [
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const { addItem } = useCart();
 
   const filteredProducts = products.filter((product) => {
     const matchesCategory =
@@ -192,7 +201,11 @@ const Shop = () => {
                         {product.unit}
                       </span>
                     </div>
-                    <Button size="sm" className="bg-primary hover:bg-primary/90">
+                    <Button
+                      size="sm"
+                      className="bg-primary hover:bg-primary/90"
+                      onClick={() => addItem(product)}
+                    >
                       <ShoppingCart className="h-4 w-4" />
                     </Button>
                   </div>
@@ -243,7 +256,11 @@ const Shop = () => {
                       <Link to="/contact">Subscribe Now</Link>
                     </Button>
                   </div>
-                  <div className="text-8xl text-center">🥗</div>
+                  <div className="flex items-center justify-center">
+                    <div className="p-8 bg-primary-foreground/10 rounded-xl">
+                      <Leaf className="h-24 w-24" />
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>

@@ -1,4 +1,4 @@
-import { Instagram } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
 import hotPepperSeedlings from "@/assets/farm/hot-pepper-seedlings.jpg";
 import pepperPlants from "@/assets/farm/pepper-plants.jpg";
@@ -15,7 +15,6 @@ export function InstagramSection() {
   return (
     <section className="py-20 bg-muted">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-4">
             Follow Us On Instagram
@@ -31,7 +30,6 @@ export function InstagramSection() {
           </a>
         </div>
 
-        {/* Instagram Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {instagramPosts.map((post) => (
             <a
@@ -53,7 +51,6 @@ export function InstagramSection() {
           ))}
         </div>
 
-        {/* Social Links */}
         <div className="flex justify-center gap-6 mt-12">
           <a
             href="https://facebook.com/flycorpfarms"
@@ -61,7 +58,7 @@ export function InstagramSection() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-background rounded-full shadow-sm hover:shadow-md transition-shadow text-foreground hover:text-primary"
           >
-            <span className="text-xl">📘</span>
+            <Facebook className="h-5 w-5" />
             <span className="font-medium">Facebook</span>
           </a>
           <a
@@ -70,7 +67,7 @@ export function InstagramSection() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-background rounded-full shadow-sm hover:shadow-md transition-shadow text-foreground hover:text-primary"
           >
-            <span className="text-xl">📸</span>
+            <Instagram className="h-5 w-5" />
             <span className="font-medium">Instagram</span>
           </a>
         </div>
