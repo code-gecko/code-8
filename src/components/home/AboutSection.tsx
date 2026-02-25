@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Recycle, Sprout, Sun, Droplets } from "lucide-react";
+import greenhousePots from "@/assets/farm/greenhouse-pots.jpg";
+import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
+import pepperPlants from "@/assets/farm/pepper-plants.jpg";
+
+const highlights = [
+  { icon: Recycle, label: "Circular Farming" },
+  { icon: Sprout, label: "Organic Methods" },
+  { icon: Sun, label: "Solar Powered" },
+  { icon: Droplets, label: "Water Conservation" },
+];
 
 export function AboutSection() {
   return (
@@ -12,15 +22,15 @@ export function AboutSection() {
             <div className="space-y-4">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1500076656116-558758c991c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Farm landscape"
+                  src={greenhousePots}
+                  alt="Greenhouse pots at the farm"
                   className="w-full h-48 object-cover"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Greenhouse"
+                  src={greenhouseSeedlings}
+                  alt="Greenhouse seedlings"
                   className="w-full h-64 object-cover"
                 />
               </div>
@@ -28,8 +38,8 @@ export function AboutSection() {
             <div className="space-y-4 pt-8">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Fresh produce"
+                  src={pepperPlants}
+                  alt="Pepper plants growing"
                   className="w-full h-64 object-cover"
                 />
               </div>
@@ -61,22 +71,14 @@ export function AboutSection() {
 
             {/* Sustainability Highlights */}
             <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">♻️</span>
-                <span className="text-sm font-medium">Circular Farming</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">🌱</span>
-                <span className="text-sm font-medium">Organic Methods</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">☀️</span>
-                <span className="text-sm font-medium">Solar Powered</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">💧</span>
-                <span className="text-sm font-medium">Water Conservation</span>
-              </div>
+              {highlights.map((h) => (
+                <div key={h.label} className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <h.icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-sm font-medium">{h.label}</span>
+                </div>
+              ))}
             </div>
 
             <Button

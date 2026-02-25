@@ -2,9 +2,14 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Leaf } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 import chiliHarvest from "@/assets/farm/chili-harvest.jpg";
 import sweetPepper from "@/assets/farm/sweet-pepper.jpg";
+import farmerWorking from "@/assets/farm/farmer-working.jpg";
+import greenhousePots from "@/assets/farm/greenhouse-pots.jpg";
+import hotPepperSeedlings from "@/assets/farm/hot-pepper-seedlings.jpg";
+import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
 
 const products = [
   {
@@ -23,7 +28,7 @@ const products = [
     description: "Sun-dried and processed chili flakes",
     price: "UGX 25,000",
     unit: "per 500g",
-    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: hotPepperSeedlings,
     badge: "Processed",
     category: "processed",
   },
@@ -33,7 +38,7 @@ const products = [
     description: "Free-range eggs from our healthy chickens",
     price: "UGX 12,000",
     unit: "per tray",
-    image: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: farmerWorking,
     badge: "Organic",
     category: "poultry",
   },
@@ -49,31 +54,32 @@ const products = [
   },
   {
     id: 5,
-    name: "Tilapia Fish",
-    description: "Fresh tilapia from our aquaculture ponds",
+    name: "Greenhouse Vegetables",
+    description: "Fresh vegetables from our controlled environment",
     price: "UGX 18,000",
     unit: "per kg",
-    image: "https://images.unsplash.com/photo-1544943910-4c1dc44aab44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: greenhouseSeedlings,
     badge: "Fresh",
-    category: "fish",
+    category: "vegetables",
   },
   {
     id: 6,
-    name: "Goat Meat",
-    description: "Premium quality goat meat, grass-fed",
+    name: "Seedling Packs",
+    description: "Ready-to-plant seedlings for your garden",
     price: "UGX 35,000",
-    unit: "per kg",
-    image: "https://images.unsplash.com/photo-1603048297172-c92544798d5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    unit: "per pack",
+    image: greenhousePots,
     badge: "Premium",
-    category: "meat",
+    category: "vegetables",
   },
 ];
 
 export function ProductsSection() {
+  const { addItem } = useCart();
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
             <span className="text-secondary font-semibold uppercase tracking-wider text-sm">
@@ -96,7 +102,6 @@ export function ProductsSection() {
           </Button>
         </div>
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Card 
@@ -131,6 +136,7 @@ export function ProductsSection() {
                   <Button
                     size="sm"
                     className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                    onClick={() => addItem(product)}
                   >
                     <ShoppingCart className="h-4 w-4 mr-2" />
                     Add
@@ -160,7 +166,9 @@ export function ProductsSection() {
                 <Link to="/shop#csa">Learn More About CSA</Link>
               </Button>
             </div>
-            <div className="text-6xl">🥬</div>
+            <div className="p-6 bg-primary-foreground/10 rounded-xl">
+              <Leaf className="h-16 w-16" />
+            </div>
           </div>
         </div>
       </div>

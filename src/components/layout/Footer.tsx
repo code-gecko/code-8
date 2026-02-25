@@ -35,7 +35,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4 pt-2">
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/flycorpfarms"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors"
@@ -44,7 +44,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/flycorpfarms"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors"
@@ -95,9 +95,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 opacity-80" />
-                <span className="text-sm opacity-80">
-                  Kampala, Uganda
-                </span>
+                <span className="text-sm opacity-80">Kampala, Uganda</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 flex-shrink-0 opacity-80" />
@@ -121,10 +119,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <p className="text-sm text-center opacity-80">
-            © {new Date().getFullYear()} Flycorp Farms. Enabling Agriculture. All rights reserved.
+            &copy; {new Date().getFullYear()} Flycorp Farms. Enabling Agriculture. All rights reserved.
           </p>
         </div>
       </div>

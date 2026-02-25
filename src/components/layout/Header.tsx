@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { CartSheet } from "@/components/cart/CartSheet";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
@@ -22,12 +23,10 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
           <Link to="/" className="flex items-center">
             <img src={logo} alt="Flycorp Farms" className="h-12 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -45,19 +44,8 @@ export function Header() {
             ))}
           </div>
 
-          {/* Right side actions */}
           <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="relative hover:bg-muted"
-              aria-label="Shopping cart"
-            >
-              <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-secondary text-[10px] font-bold text-secondary-foreground flex items-center justify-center">
-                0
-              </span>
-            </Button>
+            <CartSheet />
 
             <Button
               className="hidden sm:flex bg-primary hover:bg-primary/90 text-primary-foreground"
@@ -66,7 +54,6 @@ export function Header() {
               <Link to="/shop">Shop Now</Link>
             </Button>
 
-            {/* Mobile menu button */}
             <Button
               variant="ghost"
               size="icon"
@@ -74,16 +61,11 @@ export function Header() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-2">

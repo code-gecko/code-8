@@ -6,21 +6,17 @@ import farmFieldBg from "@/assets/farm/farm-field.jpg";
 export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${farmFieldBg})`,
-        }}
+        style={{ backgroundImage: `url(${farmFieldBg})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
       </div>
 
-      {/* Content */}
       <div className="container relative mx-auto px-4 lg:px-8 py-20">
         <div className="max-w-2xl text-primary-foreground">
           <span className="inline-block px-4 py-2 bg-secondary/90 text-secondary-foreground text-sm font-semibold rounded-full mb-6 animate-fade-in">
-            🌱 Sustainable Farming Since 2020
+            Sustainable Farming Since 2020
           </span>
           
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
@@ -58,7 +54,6 @@ export function HeroSection() {
             </Button>
           </div>
 
-          {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-primary-foreground/20 animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <div>
               <p className="font-display text-3xl md:text-4xl font-bold">50+</p>
@@ -76,7 +71,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/50 flex items-start justify-center p-2">
           <div className="w-1 h-2 bg-primary-foreground/50 rounded-full" />
