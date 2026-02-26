@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, Sprout, Microscope, Handshake, Award } from "lucide-react";
-import farmerWorking from "@/assets/farm/farmer-working.jpg";
+import africanFarmer from "@/assets/farm/african-farmer.jpg";
 import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
 import pepperPlants from "@/assets/farm/pepper-plants.jpg";
 import farmField from "@/assets/farm/farm-field.jpg";
