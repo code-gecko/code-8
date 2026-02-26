@@ -9,12 +9,14 @@ import { useCart } from "@/contexts/CartContext";
 import chiliHarvest from "@/assets/farm/chili-harvest.jpg";
 import sweetPepper from "@/assets/farm/sweet-pepper.jpg";
 import hotPepperSeedlings from "@/assets/farm/hot-pepper-seedlings.jpg";
-import africanFarmer from "@/assets/farm/african-farmer.jpg";
+import freshEggs from "@/assets/farm/fresh-eggs.jpg";
 import pigNursing from "@/assets/farm/pig-nursing.jpg";
 import greenhousePots from "@/assets/farm/greenhouse-pots.jpg";
 import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
 import pepperPlants from "@/assets/farm/pepper-plants.jpg";
-import farmField from "@/assets/farm/farm-field.jpg";
+import tilapiaFish from "@/assets/farm/tilapia-fish.jpg";
+import goatMeat from "@/assets/farm/goat-meat.jpg";
+import wholeChicken from "@/assets/farm/whole-chicken.jpg";
 
 const categories = ["All", "Vegetables", "Processed", "Poultry", "Fish", "Meat"];
 
@@ -45,7 +47,7 @@ const products = [
     description: "Free-range eggs from our healthy chickens",
     price: "UGX 12,000",
     unit: "per tray",
-    image: pigNursing,
+    image: freshEggs,
     badge: "Organic",
     category: "poultry",
   },
@@ -65,7 +67,7 @@ const products = [
     description: "Fresh tilapia from our aquaculture ponds",
     price: "UGX 18,000",
     unit: "per kg",
-    image: greenhouseSeedlings,
+    image: tilapiaFish,
     badge: "Fresh",
     category: "fish",
   },
@@ -75,7 +77,7 @@ const products = [
     description: "Premium quality goat meat, grass-fed",
     price: "UGX 35,000",
     unit: "per kg",
-    image: farmField,
+    image: goatMeat,
     badge: "Premium",
     category: "meat",
   },
@@ -85,7 +87,7 @@ const products = [
     description: "Fresh whole chicken, locally raised",
     price: "UGX 28,000",
     unit: "per bird",
-    image: greenhousePots,
+    image: wholeChicken,
     badge: "Fresh",
     category: "poultry",
   },
