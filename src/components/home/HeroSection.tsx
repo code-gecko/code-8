@@ -15,9 +15,6 @@ export function HeroSection() {
 
       <div className="container relative mx-auto px-4 lg:px-8 py-20">
         <div className="max-w-2xl text-primary-foreground">
-          <span className="inline-block px-4 py-2 bg-secondary/90 text-secondary-foreground text-sm font-semibold rounded-full mb-6 animate-fade-in">
-            Sustainable Farming Since 2020
-          </span>
           
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
             FLYCORP FARMS
@@ -44,7 +41,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8 group"
+              className="border-secondary text-secondary-foreground bg-secondary/20 hover:bg-secondary/40 font-semibold px-8 group"
               asChild
             >
               <Link to="/tours">
