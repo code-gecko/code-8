@@ -10,6 +10,7 @@ import chiliHarvest from "@/assets/farm/chili-harvest.jpg";
 import sweetPepper from "@/assets/farm/sweet-pepper.jpg";
 import hotPepperSeedlings from "@/assets/farm/hot-pepper-seedlings.jpg";
 import farmerWorking from "@/assets/farm/farmer-working.jpg";
+import pigNursing from "@/assets/farm/pig-nursing.jpg";
 import greenhousePots from "@/assets/farm/greenhouse-pots.jpg";
 import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
 import pepperPlants from "@/assets/farm/pepper-plants.jpg";
@@ -44,7 +45,7 @@ const products = [
     description: "Free-range eggs from our healthy chickens",
     price: "UGX 12,000",
     unit: "per tray",
-    image: farmerWorking,
+    image: pigNursing,
     badge: "Organic",
     category: "poultry",
   },
