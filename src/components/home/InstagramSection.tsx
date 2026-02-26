@@ -2,13 +2,13 @@ import { Instagram, Facebook } from "lucide-react";
 import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
 import hotPepperSeedlings from "@/assets/farm/hot-pepper-seedlings.jpg";
 import pepperPlants from "@/assets/farm/pepper-plants.jpg";
-import farmerWorking from "@/assets/farm/farmer-working.jpg";
+import africanFarmer from "@/assets/farm/african-farmer.jpg";
 
 const instagramPosts = [
   { id: 1, image: greenhouseSeedlings, alt: "Greenhouse seedlings" },
   { id: 2, image: hotPepperSeedlings, alt: "Hot pepper seedlings" },
   { id: 3, image: pepperPlants, alt: "Pepper plants growing" },
-  { id: 4, image: farmerWorking, alt: "Farmer working in the field" },
+  { id: 4, image: africanFarmer, alt: "African farmer working in the field" },
 ];
 
 export function InstagramSection() {
@@ -26,7 +26,7 @@ export function InstagramSection() {
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <Instagram className="h-5 w-5" />
-            <span className="font-medium">#flycorpfarms</span>
+            <span className="font-medium">@flycorpfarms</span>
           </a>
         </div>
 

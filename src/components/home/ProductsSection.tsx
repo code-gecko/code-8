@@ -6,7 +6,7 @@ import { ShoppingCart, Leaf } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import chiliHarvest from "@/assets/farm/chili-harvest.jpg";
 import sweetPepper from "@/assets/farm/sweet-pepper.jpg";
-import farmerWorking from "@/assets/farm/farmer-working.jpg";
+import africanFarmer from "@/assets/farm/african-farmer.jpg";
 import greenhousePots from "@/assets/farm/greenhouse-pots.jpg";
 import hotPepperSeedlings from "@/assets/farm/hot-pepper-seedlings.jpg";
 import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
@@ -38,7 +38,7 @@ const products = [
     description: "Free-range eggs from our healthy chickens",
     price: "UGX 12,000",
     unit: "per tray",
-    image: farmerWorking,
+    image: africanFarmer,
     badge: "Organic",
     category: "poultry",
   },

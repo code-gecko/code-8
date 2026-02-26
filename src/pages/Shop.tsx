@@ -9,7 +9,7 @@ import { useCart } from "@/contexts/CartContext";
 import chiliHarvest from "@/assets/farm/chili-harvest.jpg";
 import sweetPepper from "@/assets/farm/sweet-pepper.jpg";
 import hotPepperSeedlings from "@/assets/farm/hot-pepper-seedlings.jpg";
-import farmerWorking from "@/assets/farm/farmer-working.jpg";
+import africanFarmer from "@/assets/farm/african-farmer.jpg";
 import pigNursing from "@/assets/farm/pig-nursing.jpg";
 import greenhousePots from "@/assets/farm/greenhouse-pots.jpg";
 import greenhouseSeedlings from "@/assets/farm/greenhouse-seedlings.jpg";
